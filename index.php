@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."db.php";
+include "db.php";
 
 echo $_SERVER['DOCUMENT_ROOT'];
 echo 'all user emails: ';

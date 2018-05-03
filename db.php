@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."config.php";
+include "config.php";
 
 $host = $config["db"]["db1"]["host"];
 $username = $config["db"]["db1"]["username"];
