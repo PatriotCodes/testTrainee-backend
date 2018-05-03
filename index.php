@@ -1,11 +1,13 @@
 <?php
 include "db.php";
 
-echo 'all user emails: ';
-echo PHP_EOL;
-
 $users = $conn->query('SELECT email from users');
 
-print_r($users);
-
-echo 'ON!';
+echo '<h2>all user emails: </h2>';
+while ($row = mysql_fetch_array($users)) {
+	echo '<tr>';
+	foreach($row as $field) {
+		echo '<td>' . htmlspecialchars($field) . '</td>';
+	}
+	echo '</tr>';
+}
