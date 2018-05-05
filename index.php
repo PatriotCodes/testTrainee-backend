@@ -4,14 +4,14 @@ include "db.php";
 $users = $conn->query('SELECT email from users');
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
-	
-}
-
-echo '<h2>all user emails: </h2>';
-while ($row = mysqli_fetch_array($users)) {
-	echo '<tr>';
-	foreach($row as $field) {
-		echo '<td>' . htmlspecialchars($field) . '</td>';
+	while ($row = mysqli_fetch_array($users)) {
+		foreach($row as $field) {
+			if ($field == $_POST['email']) {
+				echo 'error';
+			}
+		}
 	}
-	echo '</tr>';
+	echo 'success';
+} else {
+	'Data wasnt set';
 }
