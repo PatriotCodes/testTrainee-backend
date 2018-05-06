@@ -13,5 +13,5 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 	}
 	echo 'success';
 } else {
-	'Data wasnt set';
+	echo 'Data wasnt set';
 }
