@@ -3,7 +3,9 @@ include "db.php";
 
 $users = $conn->query('SELECT email from users');
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
+$post = (array)json_decode($HTTP_RAW_POST_DATA);
+
+if (isset($post['email']) && isset($post['password'])) {
 	while ($row = mysqli_fetch_array($users)) {
 		foreach($row as $field) {
 			if ($field == $_POST['email']) {
