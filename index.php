@@ -3,7 +3,7 @@ include "db.php";
 
 $users = $conn->query('SELECT email from users');
 
-$post = (array)json_decode($HTTP_RAW_POST_DATA);
+$post = (array)json_decode(file_get_contents('php://input'););
 
 if (isset($post['email']) && isset($post['password'])) {
 	while ($row = mysqli_fetch_array($users)) {
