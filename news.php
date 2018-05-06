@@ -4,7 +4,8 @@ include "db.php";
 $post = (array)json_decode(file_get_contents('php://input'));
 
 if (isset($post['id'])) {
-	$news = $conn->query("SELECT * from news where id='$post['id']'");
+	$id = $post['id'];
+	$news = $conn->query("SELECT * from news where id='$id'");
 	echo json_encode($news);
 } else {
 	$news = $conn->query('SELECT * from news');
