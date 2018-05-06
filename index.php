@@ -8,7 +8,7 @@ $post = (array)json_decode(file_get_contents('php://input'));
 if (isset($post['email']) && isset($post['password'])) {
 	while ($row = mysqli_fetch_array($users)) {
 		foreach($row as $field) {
-			if ($field == $_POST['email']) {
+			if ($field == $post['email']) {
 				echo 'error';
 			}
 		}
