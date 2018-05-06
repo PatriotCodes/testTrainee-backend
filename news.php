@@ -8,6 +8,6 @@ if (mysqli_num_rows($news) > 0) {
 	while($row = mysqli_fetch_assoc($news)) {
         array_push($news_array,$row);
     }
-	$JSON = json_encode(mysqli_fetch_assoc($news_array));
+	$JSON = json_encode($news_array);
 	echo $JSON;
 }
