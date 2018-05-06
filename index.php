@@ -9,7 +9,7 @@ if (isset($post['email']) && isset($post['password'])) {
 	while ($row = mysqli_fetch_array($users)) {
 		foreach($row as $field) {
 			if ($field == $post['email']) {
-				echo 'error';
+				exit('error');
 			}
 		}
 	}
