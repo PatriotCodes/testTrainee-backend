@@ -2,15 +2,11 @@
 include "db.php";
 
 $post = (array)json_decode(file_get_contents('php://input'));
-
-$id = 1;
-$news = $conn->query("SELECT * from news where id='$id'");
-echo json_encode(mysqli_fetch_assoc($news));
 	
 if (isset($post['id'])) {
 	$id = $post['id'];
 	$news = $conn->query("SELECT * from news where id='$id'");
-	echo json_encode($news);
+	echo json_encode(mysqli_fetch_assoc($news));
 } else {
 	$news = $conn->query('SELECT * from news');
 	$news_array = Array();
